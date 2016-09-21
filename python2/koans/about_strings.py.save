@@ -83,10 +83,10 @@ world!
 
     def test_plus_equals_also_leaves_original_string_unmodified(self):
         original = "Hello, "
-        hi = original
+        hi = originalf
         there = "world"
         hi += there
-        self.assertEqual("Hello, ", original)
+        self.assertEqual("Hello, world", original)
 
     def test_most_strings_interpret_escape_characters(self):
         string = "\n"
