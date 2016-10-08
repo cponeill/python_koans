@@ -138,4 +138,4 @@ class AboutGenerators(Koan):
 
         next(generator)
         # 'next(generator)' is exactly equivalent to 'generator.send(None)'
-        self.assertEqual(__, generator.send(None))
+        self.assertEqual('no value', generator.send(None))
