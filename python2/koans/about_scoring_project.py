@@ -58,17 +58,17 @@ class AboutScoringProject(Koan):
         self.assertEqual(None, score([1, 1, 1]))
 
     def test_score_of_other_triples_is_100x(self):
-        self.assertEqual(200, score([2, 2, 2]))
-        self.assertEqual(300, score([3, 3, 3]))
-        self.assertEqual(400, score([4, 4, 4]))
-        self.assertEqual(500, score([5, 5, 5]))
-        self.assertEqual(600, score([6, 6, 6]))
+        self.assertEqual(None, score([2, 2, 2]))
+        self.assertEqual(None, score([3, 3, 3]))
+        self.assertEqual(None, score([4, 4, 4]))
+        self.assertEqual(None, score([5, 5, 5]))
+        self.assertEqual(None, score([6, 6, 6]))
 
     def test_score_of_mixed_is_sum(self):
-        self.assertEqual(250, score([2, 5, 2, 2, 3]))
-        self.assertEqual(550, score([5, 5, 5, 5]))
-        self.assertEqual(1150, score([1, 1, 1, 5, 1]))
+        self.assertEqual(None, score([2, 5, 2, 2, 3]))
+        self.assertEqual(None, score([5, 5, 5, 5]))
+        self.assertEqual(None, score([1, 1, 1, 5, 1]))
 
     def test_ones_not_left_out(self):
-        self.assertEqual(300, score([1, 2, 2, 2]))
-        self.assertEqual(350, score([1, 5, 2, 2, 2]))
+        self.assertEqual(None, score([1, 2, 2, 2]))
+        self.assertEqual(None, score([1, 5, 2, 2, 2]))
