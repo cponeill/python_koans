@@ -46,10 +46,10 @@ class AboutScoringProject(Koan):
         self.assertEqual(None, score([5]))
 
     def test_score_of_a_single_roll_of_1_is_100(self):
-        self.assertEqual(100, score([1]))
+        self.assertEqual(None, score([1]))
 
     def test_score_of_multiple_1s_and_5s_is_the_sum_of_individual_scores(self):
-        self.assertEqual(300, score([1, 5, 5, 1]))
+        self.assertEqual(None, score([1, 5, 5, 1]))
 
     def test_score_of_single_2s_3s_4s_and_6s_are_zero(self):
         self.assertEqual(0, score([2, 3, 4, 6]))
