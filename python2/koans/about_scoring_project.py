@@ -52,10 +52,10 @@ class AboutScoringProject(Koan):
         self.assertEqual(None, score([1, 5, 5, 1]))
 
     def test_score_of_single_2s_3s_4s_and_6s_are_zero(self):
-        self.assertEqual(0, score([2, 3, 4, 6]))
+        self.assertEqual(None, score([2, 3, 4, 6]))
 
     def test_score_of_a_triple_1_is_1000(self):
-        self.assertEqual(1000, score([1, 1, 1]))
+        self.assertEqual(None, score([1, 1, 1]))
 
     def test_score_of_other_triples_is_100x(self):
         self.assertEqual(200, score([2, 2, 2]))
