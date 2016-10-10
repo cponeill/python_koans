@@ -10,10 +10,10 @@ class AboutClasses(Koan):
 
     def test_instances_of_classes_can_be_created_adding_parentheses(self):
         fido = self.Dog()
-        self.assertEqual(__, fido.__class__.__name__)
+        self.assertEqual('Dog', fido.__class__.__name__)
 
     def test_classes_have_docstrings(self):
-        self.assertMatch(__, self.Dog.__doc__)
+        self.assertMatch('Dogs need regular walkies. Never, ever let them drive.', self.Dog.__doc__)
 
     # ------------------------------------------------------------------
 
@@ -26,12 +26,12 @@ class AboutClasses(Koan):
 
     def test_init_method_is_the_constructor(self):
         dog = self.Dog2()
-        self.assertEqual(__, dog._name)
+        self.assertEqual('Paul', dog._name)
 
     def test_private_attributes_are_not_really_private(self):
         dog = self.Dog2()
         dog.set_name("Fido")
-        self.assertEqual(__, dog._name)
+        self.assertEqual('Fido', dog._name)
         # The _ prefix in _name implies private ownership, but nothing is truly
         # private in Python.
 
