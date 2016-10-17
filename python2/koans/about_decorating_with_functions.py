@@ -15,7 +15,7 @@ class AboutDecoratingWithFunctions(Koan):
 
     def test_decorators_can_modify_a_function(self):
         self.assertMatch('o/~ We all live in a broken submarine o/~', self.mediocre_song())
-        self.assertEqual(__, self.mediocre_song.wow_factor)
+        self.assertEqual('COWBELL BABY!', self.mediocre_song.wow_factor)
 
     # ------------------------------------------------------------------
 
