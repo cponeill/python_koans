@@ -41,14 +41,14 @@ class AboutInheritance(Koan):
             fido = self.Dog("Fido")
             fido.wag()
         except StandardError as ex:
-            self.assertMatch(__, ex[0])
+            self.assertMatch("'Dog' object has no attribute 'wag'", ex[0])
 
     def test_subclasses_can_modify_existing_behavior(self):
         chico = self.Chihuahua("Chico")
-        self.assertEqual(__, chico.bark())
+        self.assertEqual('yip', chico.bark())
 
         fido = self.Dog("Fido")
-        self.assertEqual(__, fido.bark())
+        self.assertEqual('WOOF', fido.bark())
 
     # ------------------------------------------------------------------
 
@@ -58,7 +58,7 @@ class AboutInheritance(Koan):
 
     def test_subclasses_can_invoke_parent_behavior_via_super(self):
         ralph = self.BullDog("Ralph")
-        self.assertEqual(__, ralph.bark())
+        self.assertEqual('WOOF, GRR', ralph.bark())
 
     # ------------------------------------------------------------------
 
@@ -68,7 +68,7 @@ class AboutInheritance(Koan):
 
     def test_super_works_across_methods(self):
         george = self.GreatDane("George")
-        self.assertEqual(__, george.growl())
+        self.assertEqual('WOOF, GROWL', george.growl())
 
     # ---------------------------------------------------------
 
@@ -85,7 +85,7 @@ class AboutInheritance(Koan):
         try:
             name = snoopy.name
         except Exception as ex:
-            self.assertMatch(__, ex[0])
+            self.assertMatch("'Pug' object has no attribute '_name'", ex[0])
 
     def test_base_init_has_to_be_called_explicitly(self):
         boxer = self.Greyhound("Boxer")
