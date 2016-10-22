@@ -100,7 +100,7 @@ class AboutMultipleInheritance(Koan):
 
     def test_base_class_methods_can_affect_instance_variables_in_the_object(self):
         jeff = self.Spiderpig()
-        self.assertEqual(__, jeff.name)
+        self.assertEqual('Jeff', jeff.name)
 
         jeff.set_name("Rover")
         self.assertEqual(__, jeff.name)
