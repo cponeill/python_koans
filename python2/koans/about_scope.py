@@ -20,18 +20,18 @@ class AboutScope(Koan):
         try:
             fido = Dog()
         except Exception as ex:
-            self.assertMatch(__, ex[0])
+            self.assertMatch("global name 'Dog' is not defined", ex[0])
 
     def test_you_can_reference_nested_classes_using_the_scope_operator(self):
         fido = jims.Dog()
         # name 'jims' module name is taken from jims.py filename
 
         rover = joes.Dog()
-        self.assertEqual(__, fido.identify())
-        self.assertEqual(__, rover.identify())
+        self.assertEqual('jims dog', fido.identify())
+        self.assertEqual('joes dog', rover.identify())
 
-        self.assertEqual(____, type(fido) == type(rover))
-        self.assertEqual(____, jims.Dog == joes.Dog)
+        self.assertEqual(False, type(fido) == type(rover))
+        self.assertEqual(False, jims.Dog == joes.Dog)
 
     # ------------------------------------------------------------------
 
@@ -39,20 +39,20 @@ class AboutScope(Koan):
         pass
 
     def test_bare_bones_class_names_do_not_assume_the_current_scope(self):
-        self.assertEqual(____, AboutScope.str == str)
+        self.assertEqual(False, AboutScope.str == str)
 
     def test_nested_string_is_not_the_same_as_the_system_string(self):
-        self.assertEqual(____, self.str == type("HI"))
+        self.assertEqual(False, self.str == type("HI"))
 
     def test_str_without_self_prefix_stays_in_the_global_scope(self):
-        self.assertEqual(____, str == type("HI"))
+        self.assertEqual(True, str == type("HI"))
 
     # ------------------------------------------------------------------
 
     PI = 3.1416
 
     def test_constants_are_defined_with_an_initial_uppercase_letter(self):
-        self.assertAlmostEqual(_____, self.PI)
+        self.assertAlmostEqual(3.1416, self.PI)
         # Note, floating point numbers in python are not precise.
         # assertAlmostEqual will check that it is 'close enough'
 
