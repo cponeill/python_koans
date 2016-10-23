@@ -58,7 +58,7 @@ class AboutScope(Koan):
 
     def test_constants_are_assumed_by_convention_only(self):
         self.PI = "rhubarb"
-        self.assertEqual(_____, self.PI)
+        self.assertEqual('rhubarb', self.PI)
         # There aren't any real constants in python. Its up to the developer
         # to keep to the convention and not modify them.
 
@@ -75,7 +75,7 @@ class AboutScope(Koan):
         global counter
         start = counter
         self.increment_using_local_counter(start)
-        self.assertEqual(____, counter == start + 1)
+        self.assertEqual(False, counter == start + 1)
 
     def test_incrementing_with_global_counter(self):
         global counter
