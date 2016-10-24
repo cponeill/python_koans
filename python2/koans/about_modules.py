@@ -56,7 +56,7 @@ class AboutModules(Koan):
         from local_module import Duck  # local_module.py
 
         duck = Duck()
-        self.assertEqual(__, duck._password)
+        self.assertEqual('password', duck._password)
         # module level attribute hiding doesn't affect class attributes
         # (unless the class itself is hidden).
 
@@ -65,14 +65,14 @@ class AboutModules(Koan):
 
         # 'Goat' is on the __all__ list
         goat = Goat()
-        self.assertEqual(__, goat.name)
+        self.assertEqual('George', goat.name)
 
         # How about velociraptors?
         lizard = _Velociraptor()
-        self.assertEqual(__, lizard.name)
+        self.assertEqual('Cuddles', lizard.name)
 
         # SecretDuck? Never heard of her!
         try:
             duck = SecretDuck()
         except NameError as ex:
-            self.assertMatch(__, ex[0])
+            self.assertMatch("global name 'SecretDuck' is not defined", ex[0])
