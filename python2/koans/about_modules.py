@@ -43,14 +43,14 @@ class AboutModules(Koan):
         goose = Goose()
         hamster = Hamster()
 
-        self.assertEqual(__, goose.name)
-        self.assertEqual(__, hamster.name)
+        self.assertEqual('Mr Stabby', goose.name)
+        self.assertEqual('Phil', hamster.name)
 
     def test_modules_hide_attributes_prefixed_by_underscores(self):
         try:
             private_squirrel = _SecretSquirrel()
         except NameError as ex:
-            self.assertMatch(__, ex[0])
+            self.assertMatch("global name '_SecretSquirrel' is not defined", ex[0])
 
     def test_private_attributes_are_still_accessible_in_modules(self):
         from local_module import Duck  # local_module.py
