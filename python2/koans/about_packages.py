@@ -51,7 +51,7 @@ class AboutPackages(Koan):
         # Import /contemplate_koans.py
         import contemplate_koans
 
-        self.assertEqual(__, contemplate_koans.__name__)
+        self.assertEqual('contemplate_koans', contemplate_koans.__name__)
 
         # contemplate_koans.py is the root module in this package because its
         # the first python module called in koans.
@@ -65,4 +65,4 @@ class AboutPackages(Koan):
         # Import contemplate_koans.py/koans/a_package_folder/a_module.py
         from koans.a_package_folder.a_module import Duck
 
-        self.assertEqual(__, Duck.__module__)
+        self.assertEqual('koans.a_package_folder.a_module', Duck.__module__)
