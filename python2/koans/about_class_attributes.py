@@ -125,7 +125,7 @@ class AboutClassAttributes(Koan):
         try:
             fido.name = "Fido"
         except Exception as ex:
-            self.assertMatch(__, ex[0])
+            self.assertMatch("'classmethod' object is not callable", ex[0])
 
     def test_classes_and_instances_do_not_share_instance_attributes(self):
         fido = self.Dog3()
