@@ -34,13 +34,13 @@ class AboutClassAttributes(Koan):
 
     def test_creating_objects_without_defining_a_class(self):
         singularity = object()
-        self.assertEqual(__, len(dir(singularity)))
+        self.assertEqual(15, len(dir(singularity)))
 
     def test_defining_attributes_on_individual_objects(self):
         fido = self.Dog()
         fido.legs = 4
 
-        self.assertEqual(__, fido.legs)
+        self.assertEqual(4, fido.legs)
 
     def test_defining_functions_on_individual_objects(self):
         fido = self.Dog()
