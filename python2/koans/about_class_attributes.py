@@ -46,7 +46,7 @@ class AboutClassAttributes(Koan):
         fido = self.Dog()
         fido.wag = lambda: 'fidos wag'
 
-        self.assertEqual(__, fido.wag())
+        self.assertEqual('fidos wag', fido.wag())
 
     def test_other_objects_are_not_affected_by_these_singleton_functions(self):
         fido = self.Dog()
@@ -59,7 +59,7 @@ class AboutClassAttributes(Koan):
         try:
             rover.wag()
         except Exception as ex:
-            self.assertMatch(__, ex[0])
+            self.assertMatch("'Dog' object has no attribute 'wag'", ex[0])
 
     # ------------------------------------------------------------------
 
@@ -82,19 +82,19 @@ class AboutClassAttributes(Koan):
             return "classmethod growl, arg: cls=" + cls.__name__
 
     def test_like_all_objects_classes_can_have_singleton_methods(self):
-        self.assertMatch(__, self.Dog2.growl())
+        self.assertMatch('classmethod growl, arg: cls=Dog2', self.Dog2.growl())
 
     def test_classmethods_are_not_independent_of_instance_methods(self):
         fido = self.Dog2()
-        self.assertMatch(__, fido.growl())
-        self.assertMatch(__, self.Dog2.growl())
+        self.assertMatch('classmethod growl, arg: cls=Dog2', fido.growl())
+        self.assertMatch('classmethod growl, arg: cls=Dog2', self.Dog2.growl())
 
     def test_staticmethods_are_unbound_functions_housed_in_a_class(self):
-        self.assertMatch(__, self.Dog2.bark())
+        self.assertMatch('staticmethod bark, arg: None', self.Dog2.bark())
 
     def test_staticmethods_also_overshadow_instance_methods(self):
         fido = self.Dog2()
-        self.assertMatch(__, fido.bark())
+        self.assertMatch('staticmethod bark, arg: None', fido.bark())
 
     # ------------------------------------------------------------------
 
