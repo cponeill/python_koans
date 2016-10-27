@@ -66,7 +66,7 @@ class AboutAttributeAccess(Koan):
     def test_changing_getattribute_will_affect__the_getattr_function(self):
         catcher = self.CatchAllAttributeReads()
 
-        self.assertMatch(__, getattr(catcher, 'any_attribute'))
+        self.assertMatch("Someone called 'any_attribute' and it could not be found", getattr(catcher, 'any_attribute'))
 
     # ------------------------------------------------------------------
 
@@ -82,8 +82,8 @@ class AboutAttributeAccess(Koan):
     def test_foo_attributes_are_caught(self):
         catcher = self.WellBehavedFooCatcher()
 
-        self.assertEqual(__, catcher.foo_bar)
-        self.assertEqual(__, catcher.foo_baz)
+        self.assertEqual('Foo to you too', catcher.foo_bar)
+        self.assertEqual('Foo to you too', catcher.foo_baz)
 
     def test_non_foo_messages_are_treated_normally(self):
         catcher = self.WellBehavedFooCatcher()
@@ -91,7 +91,7 @@ class AboutAttributeAccess(Koan):
         try:
             catcher.normal_undefined_attribute
         except AttributeError as ex:
-            self.assertMatch(__, ex[0])
+            self.assertMatch("'WellBehavedFooCatcher' object has no attribute 'normal_undefined_attribute'", ex[0])
 
     # ------------------------------------------------------------------
 
