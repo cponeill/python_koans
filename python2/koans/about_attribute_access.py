@@ -19,7 +19,7 @@ class AboutAttributeAccess(Koan):
         try:
             typical.foobar()
         except Exception as exception:
-            self.assertEqual(__, exception.__class__.__name__)
+            self.assertEqual('AttributeError', exception.__class__.__name__)
             self.assertMatch(__, exception[0])
 
     def test_calling_getattribute_causes_an_attribute_error(self):
