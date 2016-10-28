@@ -52,8 +52,8 @@ class AboutDeletingObjects(Koan):
         except AttributeError as e:
             err_msg2 = e.args[0]
 
-        self.assertMatch(__, err_msg1)
-        self.assertMatch(__, err_msg2)
+        self.assertMatch("'ClosingSale' object has no attribute 'toilet_brushes'", err_msg1)
+        self.assertMatch("'ClosingSale' object has no attribute 'hamsters'", err_msg2)
 
     # --------------------------------------------------------------------
 
