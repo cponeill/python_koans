@@ -137,4 +137,4 @@ class AboutRegex(Koan):
         change_this_search_string = '[^nc]am'
         self.assertEquals(
             re.findall(change_this_search_string, string),
-            ['sam.xls'])
+            ['sam'])
