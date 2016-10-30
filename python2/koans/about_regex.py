@@ -84,7 +84,7 @@ class AboutRegex(Koan):
         change_this_search_string = 'a..xlx'
         self.assertEquals(
             len(re.findall(change_this_search_string, string)),
-            3)
+            0)
 
     def test_matching_set_character(self):
         """
