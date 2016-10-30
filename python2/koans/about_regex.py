@@ -49,7 +49,7 @@ class AboutRegex(Koan):
         m = re.match('Felix', string)  # TIP: match may not be the best option
 
         # I want to know how many times my name appears
-        self.assertEqual(m, __)
+        self.assertEqual(m, None)
 
     def test_matching_literal_text_not_case_sensitivity(self):
         """
