@@ -110,7 +110,7 @@ class AboutRegex(Koan):
         change_this_search_string = '[nsc]a[2-9].xls'
         self.assertEquals(
             len(re.findall(change_this_search_string, string)),
-            3)
+            1)
 
     def test_anything_but_matching(self):
         """
